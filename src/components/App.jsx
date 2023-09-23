@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
+import { Filter } from './Filter/Filter';
 import css from 'App.module.css';
 export class App extends Component {
   constructor() {
@@ -50,6 +51,7 @@ export class App extends Component {
     }));
 
   render() {
+    const { filter } = this.state;
     return (
       <section className={css.content}>
         <div className={css.content__container}>
@@ -57,7 +59,9 @@ export class App extends Component {
           <ContactList
             contacts={this.filteredContacts()}
             deleteContact={this.deleteContact}
-          ></ContactList>
+          >
+            <Filter filter={filter} addFilter={this.addFilter} />
+          </ContactList>
         </div>
       </section>
     );
