@@ -49,8 +49,6 @@ export class App extends Component {
     }));
 
   render() {
-    // const { filter } = this.state;
-
     return (
       <section className={css.content}>
         <div className={css.content__container}>
