@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { ContactForm } from './ContactForm/ContactForm';
+import { ContactList } from './ContactList/ContactList';
 import css from 'App.module.css';
 export class App extends Component {
   constructor() {
@@ -53,6 +54,10 @@ export class App extends Component {
       <section className={css.content}>
         <div className={css.content__container}>
           <ContactForm addContact={this.addContact} />
+          <ContactList
+            contacts={this.filteredContacts()}
+            deleteContact={this.deleteContact}
+          ></ContactList>
         </div>
       </section>
     );
