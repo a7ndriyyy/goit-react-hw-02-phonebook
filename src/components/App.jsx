@@ -4,6 +4,12 @@ import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 import css from 'App.module.css';
 export class App extends Component {
+state = {
+  contacts: [],
+  filter: '',
+  name: '',
+  number: ''
+}
   constructor() {
     super();
     this.state = {
