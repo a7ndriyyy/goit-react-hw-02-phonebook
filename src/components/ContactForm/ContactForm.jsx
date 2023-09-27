@@ -3,14 +3,14 @@ import { nanoid } from 'nanoid';
 import css from '../ContactForm/ContactForm.module.css';
 export class ContactForm extends Component {
   state = {
-  name: '',
-  number: ''
-}
+    name: '',
+    number: ''
+  }
+
   handleFormSubmit = event => {
     event.preventDefault();
 
-    const name = event.target.name.value;
-    const number = event.target.number.value;
+    const { name, number } = this.props;
     const { addContact } = this.props;
 
     addContact({ id: nanoid(), name, number });
