@@ -15,7 +15,7 @@ export class ContactForm extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
 
-    const { name, number } = this.props;
+    const { name, number } = this.state;
     const { addContact } = this.props;
 
     addContact({ id: nanoid(), name, number });
